@@ -1,3 +1,1 @@
-# Html-and-css-template
-
-HTML & CSS Template
+# Html-and-css-and-JavaScript-template
