@@ -348,10 +348,11 @@ ul {
   position: absolute;
   top: 15px;
   right: 15px;
-  color: var(--main-color);
+  color: white;
   width: 20px;
   height: 20px;
   z-index: 3;
+  background-color: var(--main-color);
   border: 2px solid var(--main-color);
   display: flex;
   justify-content: center;
@@ -370,7 +371,7 @@ ul {
   -o-transition: var(--main-transition);
 }
 .header .mega-menu .close:hover {
-  color: var(--main-color-alt);
+  background-color: var(--main-color-alt);
   border-color: var(--main-color-alt);
 }
 .header .mega-menu .image img {
@@ -1884,7 +1885,7 @@ ul {
   position: fixed;
   bottom: 35px;
   right: -35px;
-  background-color: #ff5622;
+  background-color: var(--main-color);
   z-index: 1;
   color: white;
   font-weight: bold;
@@ -1902,6 +1903,9 @@ ul {
   -moz-transition: 0.2s;
   -ms-transition: 0.2s;
   -o-transition: 0.2s;
+}
+.stotop:hover {
+  background-color: var(--main-color-alt);
 }
 .stotop.show {
   right: 20px;
