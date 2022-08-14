@@ -234,6 +234,23 @@ ul {
     background-image: url(../imgs/discount-background2.jpg);
   }
 }
+@keyframes control-width {
+  from {
+    width: 0;
+  }
+  to {
+    width: 410px;
+  }
+}
+@keyframes blink {
+  from {
+    border-right-color: var(--main-color);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
 /* End Animation */
 /* Start Header */
 .header {
@@ -468,6 +485,16 @@ ul {
 @media (max-width: 767px) {
   .landing .text h1 {
     font-size: 28px;
+  }
+}
+@media (min-width: 1200px) {
+  .landing .text h1 {
+    width: 410px;
+    border-right: 2px solid var(--main-color);
+    overflow: hidden;
+    white-space: nowrap;
+    animation: control-width 3s steps(24) 2s both, blink 1s infinite;
+    -webkit-animation: control-width 3s steps(24) 2s both, blink 1s infinite;
   }
 }
 .landing .text p {
