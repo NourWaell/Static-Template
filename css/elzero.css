@@ -250,7 +250,20 @@ ul {
     border-right-color: transparent;
   }
 }
-
+@keyframes music {
+  25% {
+    width: 100px;
+  }
+  50% {
+    width: 300px;
+  }
+  75% {
+    width: 250px;
+  }
+  100% {
+    width: 0px;
+  }
+}
 /* End Animation */
 /* Start Header */
 .header {
@@ -1727,9 +1740,38 @@ ul {
   margin-bottom: 25px;
   padding: 15px;
   border: none;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 2px solid #ccc;
   background-color: #f9f9f9;
   caret-color: var(--main-color);
+}
+.discount .form .musical {
+  background-color: #2196f3;
+  height: 2px;
+  width: 0;
+  position: relative;
+  display: block;
+  bottom: 27px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.discount .form .musical.anim1 {
+  animation: music 3s linear infinite both;
+  -webkit-animation: music 3s linear infinite both;
+}
+.discount .form .musical.anim2 {
+  animation: music 2s ease infinite both;
+  -webkit-animation: music 2s ease infinite both;
+}
+.discount .form .musical.anim3 {
+  animation: music 4s ease-in-out infinite both;
+  -webkit-animation: music 4s ease-in-out infinite both;
+}
+.discount .form .musical.anim4 {
+  animation: music 5s ease-out infinite both;
+  -webkit-animation: music 5s ease-out infinite both;
 }
 .discount .form textarea.input {
   resize: none;
