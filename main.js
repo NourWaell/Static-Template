@@ -1,10 +1,6 @@
 // Scroll To Top Button
 let scrollToTop = document.querySelector(".stotop");
-window.onscroll = function () {
-  this.scrollY
-    ? scrollToTop.classList.add("show")
-    : scrollToTop.classList.remove("show");
-};
+
 scrollToTop.onclick = function () {
   window.scrollTo({
     top: 0,
@@ -62,3 +58,45 @@ let counter = setInterval(() => {
     clearInterval(counter);
   }
 }, 1000);
+
+// Skills Progress show when scrolling to skills section
+let skillsSection = document.querySelector(".our-skills");
+let skillsProgressSpans = document.querySelectorAll(".the-progress span");
+
+// Numbers increase on scrolling to stats section
+let statsSection = document.querySelector(".stats");
+let numsCounting = document.querySelectorAll(".stats .number");
+let functionStarted = false;
+
+function startCount(el) {
+  let numGoal = el.dataset.goal;
+  let numCounter = setInterval(() => {
+    el.textContent++;
+    if (el.textContent == numGoal) {
+      clearInterval(numCounter);
+    }
+  }, 700 / numGoal);
+}
+
+// The Main OnScroll Event for every scrolling function
+window.onscroll = function () {
+  // Scroll To Top Button
+  window.scrollY >= 1000
+    ? scrollToTop.classList.add("show")
+    : scrollToTop.classList.remove("show");
+
+  // Skills Section onScroll Function
+  if (window.scrollY >= skillsSection.offsetTop - 250) {
+    skillsProgressSpans.forEach((span) => {
+      span.style.width = span.dataset.width;
+    });
+  }
+
+  // Stats Section onScroll Function
+  if (window.scrollY >= statsSection.offsetTop - 350) {
+    if (!functionStarted) {
+      numsCounting.forEach((num) => startCount(num));
+    }
+    functionStarted = true;
+  }
+};
