@@ -35,7 +35,7 @@ for (var i = 0; i < lis.length; i++) {
 }
 
 // CountDown Timer
-let countDownDate = new Date("Nov 20, 2022 23:59:59").getTime();
+let countDownDate = new Date("Nov 20, 2023 23:59:59").getTime();
 let counter = setInterval(() => {
   let dateNow = new Date().getTime();
   let dateDifference = countDownDate - dateNow;
